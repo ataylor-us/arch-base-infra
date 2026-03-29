@@ -1,0 +1,14 @@
+---
+- name: Set up arch box
+  hosts: all
+  roles:
+    - system
+    - editor
+    - backups
+    - firewall
+    - containers
+    - terminal
+    - role: artis3n.tailscale.machine
+      when: "'staging' not in group_names"
+    - notifications
+    - file_manager
