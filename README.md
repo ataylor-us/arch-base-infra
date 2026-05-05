@@ -2,13 +2,13 @@
 
 Base playbook to set up an Arch box
 
-```
-ansible-playbook master.yml -e tailscale_authkey=`#key`
+```bash
+ansible-playbook master.yml -e tailscale_authkey=`#key` -e ansible_host=`#ip`
 ```
 
 ## Installation
 
-Use linux-lts kernel. Select Minimal packages & choose NetworkManager during installation. chroot in after installing and enable the sshd service.
+Used `archinstall`.  Select linux-lts kernel. Select Minimal packages & choose NetworkManager during installation. chroot in after installing and enable the sshd service.
 
 Base packages:
 ```json
